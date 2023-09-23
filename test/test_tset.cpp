@@ -25,6 +25,7 @@ TEST(TSet, can_insert_existing_element)
 {
     const size_t size = 5;
     const uint k = 3;
+
     TSet set(size);
     set.insElem(k);
     set.insElem(k);
