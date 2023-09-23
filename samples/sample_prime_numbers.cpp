@@ -17,13 +17,28 @@
 
 int main()
 {
-    int n, m, k, count;
+    const size_t size = 2;
+    TBitField bf(size), negBf(size), expNegBf(size);
+    // bf = 01
+    if (negBf == expNegBf) std::cout << "---";
+    
+    bf.setBit(1);
+    negBf = ~bf;
+    // expNegBf = 10
+    expNegBf.setBit(0);
+    
+    std::cout << bf << " " << negBf << " " << expNegBf << "\n";
+    if (negBf == expNegBf) std::cout << "---";
+    //std::cout << a;
+
+   
+    /*int n, m, k, count;
     setlocale(LC_ALL, "Russian");
     std::cout << "Тестирование программ поддержки битового поля" << std::endl;
     std::cout << "             Решето Эратосфена" << std::endl;
     std::cout << "Введите верхнюю границу целых значений - ";
     std::cin  >> n;
-    TBitField s(n + 1);
+    TBitField s(n+1);
     // заполнение множества
     for (m = 2; m <= n; m++)
         s.setBit(m);
@@ -48,7 +63,7 @@ int main()
                 std::cout << std::endl;
          }
     std::cout << std::endl;
-    std::cout << "В первых " << n << " числах " << count << " простых" << std::endl;
+    std::cout << "В первых " << n << " числах " << count << " простых" << std::endl;*/
 }
 #else
 
