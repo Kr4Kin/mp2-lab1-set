@@ -17,7 +17,16 @@
 
 int main()
 {
-    int n, m, k, count;
+    const size_t size = 38;
+    TBitField bf(size), negBf(size), expNegBf(size);
+    bf.setBit(35);
+    negBf = ~bf;
+
+    for (size_t i = 0; i < size; i++)
+        expNegBf.setBit(i);
+    expNegBf.clrBit(35);
+    std::cout << bf << "\n" << negBf << "\n" << expNegBf;
+    /*int n, m, k, count;
     setlocale(LC_ALL, "Russian");
     std::cout << "Тестирование программ поддержки битового поля" << std::endl;
     std::cout << "             Решето Эратосфена" << std::endl;
@@ -48,7 +57,7 @@ int main()
                 std::cout << std::endl;
          }
     std::cout << std::endl;
-    std::cout << "В первых " << n << " числах " << count << " простых" << std::endl;
+    std::cout << "В первых " << n << " числах " << count << " простых" << std::endl;*/
 }
 #else
 
