@@ -9,7 +9,6 @@
 #include <iosfwd>
 
 typedef size_t elType;
-typedef size_t uint;
 
 class TBitField
 {
